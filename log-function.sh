@@ -7,6 +7,7 @@ log() {
     then
         # Systemd is present
         logger --stderr --tag "build.sh" "$@"
+        # Use --stderr to log to stderr and also to syslog
     else
         # No Systemd, fall back to stderr
         echo "$@" >&2
